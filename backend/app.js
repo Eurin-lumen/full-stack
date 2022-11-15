@@ -8,12 +8,13 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-    res.stauts(201);
+    res.status(201);
     next();
 });
 
-app.use((req, res) => {
+app.use((req, res, next) => {
     res.json({message: "Votre requete à été bien reçu !"});
+    next();
 });
 app.use((req, res , next) => {
     console.log('Réponse envoyée avec succès !');
